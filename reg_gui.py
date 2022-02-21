@@ -27,21 +27,18 @@ class main_app:
 
     def main_interface(self):
         Admin_Interface.all_members = Admin_Interface.Load_data()
-        if Admin_Interface.all_members:
-            while True:
-                main_option = input('[1]-Admin\n[2]-To Register\n[#]-Exit\nEnter Option: ')
+        while True:
+            main_option = input('[1]-Admin\n[2]-To Register\n[#]-Exit\nEnter Option: ')
 
-                if main_option == '1':
-                    Admin_Interface().admin_view()
-                elif main_option == '2':
-                    reg_window.mainloop()
-                elif main_option == '#':
-                    print('Exiting...')
-                    break
-                else:
-                    print('Invalid option')
-        else:
-            print('Seems there is a problem\nRestart application')
+            if main_option == '1':
+                Admin_Interface().admin_view()
+            elif main_option == '2':
+                reg_window.mainloop()
+            elif main_option == '#':
+                print('Exiting...')
+                break
+            else:
+                print('Invalid option')
 
 
 class Admin_Interface:
@@ -67,9 +64,9 @@ class Admin_Interface:
     def access(self):
         while True:
             admin_user = input('Enter Username: ')
-            if admin_user == '0':
+            if admin_user == 'admin':
                 admin_pass = input('Enter password: ')
-                if admin_pass == '0':
+                if admin_pass == 'admin':
                     return True
                 else:
                     print('Access denied!')
@@ -79,13 +76,16 @@ class Admin_Interface:
                 break
 
     def view_all(self):
-        for i in Admin_Interface.all_members:
-            print(f"Username: {i}\nLast Name: {Admin_Interface.all_members[i]['lastname']}" +
-                  f"\nFirst Name: {Admin_Interface.all_members[i]['firstname']}" +
-                  f"\nGender: {Admin_Interface.all_members[i]['gender']}" +
-                  f"\nMarital Status: {Admin_Interface.all_members[i]['m_status']}" +
-                  f"\nHobbies: {Admin_Interface.all_members[i]['hobbies']}" +
-                  f"\nPersonal Statement: {Admin_Interface.all_members[i]['p_state']}\n")
+        if Admin_Interface.all_members:
+            for i in Admin_Interface.all_members:
+                print(f"Username: {i}\nLast Name: {Admin_Interface.all_members[i]['lastname']}" +
+                      f"\nFirst Name: {Admin_Interface.all_members[i]['firstname']}" +
+                      f"\nGender: {Admin_Interface.all_members[i]['gender']}" +
+                      f"\nMarital Status: {Admin_Interface.all_members[i]['m_status']}" +
+                      f"\nHobbies: {Admin_Interface.all_members[i]['hobbies']}" +
+                      f"\nPersonal Statement: {Admin_Interface.all_members[i]['p_state']}\n")
+        else:
+            print('Spreadsheet is empty')
 
     def delete_member(self, username):
         if username in Admin_Interface.all_members:
