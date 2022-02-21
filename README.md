@@ -9,6 +9,7 @@
 ### Table of Contents
 
 - [Description](#description)
+  - [Future Upgrade Features](#future-upgrade-features)
 - [How To Use](#how-to-use)
 - [References](#references)
 - [License](#license)
@@ -17,8 +18,21 @@
 ---
 
 ## Description
-The gui collects information like name, hobbies from user. Through the use of class methods, that information is then stored in a csv file.
+The program utilizes both PyCharm Console and Tkinter GUI. 
+At the start of the program, either the user logs in as `admin` or `registers` as a user.
+The gui collects information like name and hobbies from user. Through the use of class methods, that information is then stored in a csv file.
+The admin can:
+- view all records
+- delete a record
+- search for a user
+- log out
 
+### Future Upgrade Features
+- Design GUI for `admin`
+- Enable `admin` to update members' information
+- Implement use of database system to replace csv/txt files.
+- Improve design of Graphical User Interface
+- Design server/client architecture
 
 #### Technologies
 
@@ -34,6 +48,9 @@ The gui collects information like name, hobbies from user. Through the use of cl
 ## How To Use
 
 Run "reg_gui.py" to start the program.
+Select [1] for admin
+or [2] to register
+After filling up all the fields, click `submit` to record data in csv file. 
 
 
 #### Installations
