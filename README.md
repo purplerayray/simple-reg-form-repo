@@ -27,7 +27,7 @@ The admin can:
 - search for a user
 - log out
 
-### Future Upgrade Features
+#### Future Upgrade Features
 - Design GUI for `admin`
 - Enable `admin` to update members' information
 - Implement use of database system to replace csv/txt files.
